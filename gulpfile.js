@@ -36,6 +36,6 @@ gulp.task('serve', function() {
     gulp.src('./')
         .pipe(webserver({
             directoryListing: false,
-            open: true
+             port: process.env.PORT || 5000
         }))
 })
