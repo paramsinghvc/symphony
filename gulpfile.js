@@ -33,7 +33,7 @@ gulp.task('transpile', function() {
 gulp.task('transpile:watch', ['transpile'], reload);
 
 gulp.task('serve', function() {
-    gulp.src('./')
+    gulp.src(__dirname)
         .pipe(webserver({
             directoryListing: false,
             port: process.env.PORT || 5000
