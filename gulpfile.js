@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     reload = browserSync.reload,
     sass = require('gulp-sass'),
     plumber = require('gulp-plumber'),
-    webserver = require('gulp-webserver');
+    connect = require('gulp-connect');
 
 gulp.task('sass', function() {
     return gulp.src('assets/sass/**/*.scss')
@@ -33,9 +33,9 @@ gulp.task('transpile', function() {
 gulp.task('transpile:watch', ['transpile'], reload);
 
 gulp.task('serve', function() {
-    gulp.src(__dirname)
-        .pipe(webserver({
-            directoryListing: false,
-            port: process.env.PORT || 5000
-        }))
+    connect.server({
+        root: __dirname,
+        port: process.env.PORT || 5000,
+        livereload: false
+    });
 })
