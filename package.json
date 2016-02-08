@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "app-root-dir": "^1.0.2",
     "app-root-path": "^1.0.0",
     "babelify": "^7.2.0",
     "bower": "^1.7.7",

@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     connect = require('gulp-connect'),
     concat = require('gulp-concat'),
+    appRootDir = require('app-root-dir').get(),
     reload = browserSync.reload;
 
 gulp.task('sass', function() {
@@ -21,7 +22,7 @@ gulp.task('sass:watch', ['sass']);
 
 gulp.task('transpile', function() {
     return browserify({
-            entries: ['./app/src/index.js'],
+            entries: [appRootDir + '/app/src/index.js'],
             debug: true
         })
         .on('error', function(err) {
@@ -31,13 +32,13 @@ gulp.task('transpile', function() {
         .transform(babelify)
         .bundle()
         .pipe(source('index.js'))
-        .pipe(gulp.dest('./app/build'))
+        .pipe(gulp.dest(appRootDir + '/app/build'))
         .pipe(connect.reload())
 });
 
 gulp.task('transpile:watch', ['transpile']);
 
-gulp.task('serve', function() {
+gulp.task('serve', ['transpile'], function() {
     connect.server({
         root: './',
         port: process.env.PORT || 5000,
