@@ -39,7 +39,7 @@ gulp.task('transpile:watch', ['transpile']);
 
 gulp.task('serve', ['transpile', 'sass'], function() {
     connect.server({
-        root: __dirname,
+        root: './',
         port: process.env.PORT || 5000,
         livereload: true
     });
