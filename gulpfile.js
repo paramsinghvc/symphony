@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     babelify = require('babelify'),
     source = require('vinyl-source-stream'),
-    browserSync = require('browser-sync'),    
+    browserSync = require('browser-sync'),
     sass = require('gulp-sass'),
     plumber = require('gulp-plumber'),
     connect = require('gulp-connect'),
@@ -37,7 +37,7 @@ gulp.task('transpile', function() {
 
 gulp.task('transpile:watch', ['transpile']);
 
-gulp.task('serve', function() {
+gulp.task('serve', ['transpile', 'sass'], function() {
     connect.server({
         root: __dirname,
         port: process.env.PORT || 5000,
@@ -54,8 +54,3 @@ gulp.task('default', ['transpile', 'sass', 'serve'], function() {
     gulp.watch(['app/src/**/*.js'], ['transpile:watch']);
     gulp.watch(['assets/sass/**/*.scss'], ['sass:watch']);
 });
-
-
-
-
-
