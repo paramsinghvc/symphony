@@ -1,43 +1,59 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 9]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<html class="no-js">
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="/assets/css/build.css">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <title>Symphony</title>
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/build.css">
     <link rel="stylesheet" type="text/css" href="/bower_components/angular-material/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Red Lips Always Lie</h1>
-    <md-card>
-        <md-card-header>            
-            <md-card-header-text>
-                <span class="md-title">Title</span>
-                <span class="md-subhead">Sub header</span>
-            </md-card-header-text>
-        </md-card-header>
-        <img ng-src="card-image.png" class="md-card-image" alt="image caption">
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline">Card headline</span>
-                <span class="md-subhead">Card subheader</span>
-            </md-card-title-text>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="start center">
-            <md-button class="md-raised"> Raised Button </md-button>
-            <md-button>Action 2</md-button>
-            <md-card-icon-actions>
-                <md-button class="md-icon-button" aria-label="icon">
-                    <md-icon md-svg-icon="icon"></md-icon>
+    <div layout="column" layout-fill>
+         <md-toolbar>
+            <div class="md-toolbar-tools">            
+                <span>Symphony</span>
+                <a href="#" class="md-button md-ink-ripple" md-button="">Collections</a>
+                <a href="#" class="md-button md-ink-ripple" md-button="">Sounds</a>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Settings">
+                    <i class="material-icons">menu</i>
                 </md-button>
-            </md-card-icon-actions>
-        </md-card-actions>
-        <md-card-content>
-            <p>
-                Card content
-            </p>
-        </md-card-content>
-    </md-card>
+            </div>
+        </md-toolbar>
+       <!--  <md-toolbar scroll-y-offset-element="scroll-y-offset-element" class="main-nav background-regal l-pinned-top l-layer-5">
+            <nav>
+                <h1><a class="md-button md-ink-ripple" ng-transclude="" href="/" md-button=""><span class="ng-scope">Angular </span><sup class="ng-scope">by Google</sup></a></h1>
+                <button class="main-nav-button main-nav-mobile-trigger l-right md-button md-ink-ripple" type="button" ng-transclude="" aria-label="View Menu" ng-click="appCtrl.toggleMainMenu($event)" md-button="md-button"><span class="ng-scope">Site Menu </span><span class="icon icon-arrow-drop-down ng-scope"></span>
+                    <div class="md-ripple-container"></div>
+                </button>
+                <ul ng-class="appCtrl.showMainNav ? 'is-visible' : ''" class="">
+                    <li class="l-left"><a class="main-nav-button md-button md-ink-ripple" ng-transclude="" href="/features.html" md-button=""><span class="ng-scope">Features</span></a></li>
+                    <li class="l-left"><a class="main-nav-button md-button md-ink-ripple" ng-transclude="" href="/docs/ts/latest/" md-button=""><span class="ng-scope">Docs</span></a></li>
+                    <li class="l-left"><a class="main-nav-button md-button md-ink-ripple" ng-transclude="" href="/about/" md-button=""><span class="ng-scope">About</span></a></li>
+                    <li class="l-left"><a class="main-nav-button md-button md-ink-ripple" ng-transclude="" href="/contribute.html" md-button=""><span class="ng-scope">Contribute</span></a></li>
+                    <li class="l-left"><a class="main-nav-button md-button md-ink-ripple" ng-transclude="" href="/support.html" md-button=""><span class="ng-scope">Support</span></a></li>
+                    <li class="l-left"><a class="main-nav-button md-button md-ink-ripple" ng-transclude="" href="/news.html" md-button=""><span class="ng-scope">News</span></a></li>
+                    <li class="l-left"><a class="main-nav-button md-button md-ink-ripple" ng-transclude="" href="/events.html" md-button=""><span class="ng-scope">Events</span></a></li>
+                    <li class="l-right feedback-button">
+                        <button class="md-icon-button top-nav-icon md-button md-ink-ripple" type="button" ng-transclude="" ng-click="appCtrl.openFeedback()" aria-label="Submit feedback on this page"><span class="material-icons ng-scope">feedback</span></button>
+                    </li>
+                </ul>
+            </nav>
+        </md-toolbar> -->
+        <md-content>
+            <md-button class="md-raised md-accent">Hello</md-button>
+        </md-content>
+    </div>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/bower_components/angular/angular.min.js"></script>
@@ -45,7 +61,7 @@
     <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/angular-aria/angular-aria.min.js"></script>
     <script src="/bower_components/angular-material/angular-material.min.js"></script>
-    <script src="/app/build/index.js"></script>
+    <script src="/public/app/build/index.js"></script>
 </body>
 
 </html>
