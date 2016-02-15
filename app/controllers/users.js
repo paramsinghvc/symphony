@@ -4,10 +4,11 @@ var Photo = require('../models/photo');
 module.exports = {
 
     getAll: function(req, res) {
+        console.log(req.query)
         User.find().populate({
             path: 'photo',
             select: 'name -_id'
-        }).exec(function(err, users) {
+        }).prune(req.query, function(err, users) {
             if (err) res.status(500).send(err);
             res.json(users);
         })

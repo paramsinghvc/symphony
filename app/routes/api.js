@@ -2,10 +2,7 @@ var User = require('../models/user'),
     Photo = require('../models/photo'),
     auth = require('../controllers/auth'),
     users = require('../controllers/users'),
-    photos = require('../controllers/photos'),
-    pruneIndexMiddleware = require('./app/middlewares/pruneIndex');
-
-pruneIndexMiddleware.init(mongoose);
+photos = require('../controllers/photos');
 
 module.exports = function(app, express) {
     var apiRouter = express.Router();

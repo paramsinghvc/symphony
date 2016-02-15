@@ -4,7 +4,8 @@ var express = require('express'),
     morgan = require('morgan'),
     mongoose = require('mongoose'),
     db = require('./config/db'),
-    path = require('path');
+    path = require('path'),
+    pruneIndexMiddleware = require('./app/middlewares/pruneIndex');
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -22,6 +23,8 @@ app.use(morgan('dev'));
 
 mongoose.connect(db.database);
 
+pruneIndexMiddleware.init(mongoose);
+
 app.use(express.static(__dirname + '/public'));
 
 var apiRoutes = require('./app/routes/api')(app, express);
@@ -30,4 +33,3 @@ app.use('/api', apiRoutes);
 
 app.listen(db.port);
 console.log('Magic happens on port ' + db.port);
-

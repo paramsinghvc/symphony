@@ -32,7 +32,7 @@ module.exports = {
                             expiresInMinutes: 1440
                         });
 
-                        res.status(200).json({
+                        res.json({
                             success: true,
                             message: 'Here\'s your token!',
                             token: token
@@ -64,7 +64,7 @@ module.exports = {
         }
     },
 
-    getUser : function(req, res) {
+    getUser: function(req, res) {
         res.json(req.decoded);
     }
 }

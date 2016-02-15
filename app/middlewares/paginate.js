@@ -25,7 +25,7 @@ module.exports = function(mongoose) {
                     .exec(function(err, results) {
                         if (err) return callback(err, null)
                         var last_page = Math.ceil(total / options.per_page);
-                        if (start > last_page) start = last_page;
+                        if (options.start > last_page) start = last_page;
                         var augmenetedResult = {
                             results: results || [],
                             total: total,

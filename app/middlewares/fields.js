@@ -5,7 +5,7 @@
 */
 module.exports = function(mongoose) {
 
-    mongoose.Query.prototype.field = function(options) {
+    mongoose.Query.prototype.fields = function(options) {
         var query = this;
         if (options && options.fields) {
             var fields = options.fields
